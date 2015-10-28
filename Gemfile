@@ -14,9 +14,10 @@ gem 'sass-rails'
 gem 'bootstrap-sass'
 gem 'bootstrap-sass-extras'
 gem 'jquery-rails'
-gem 'compass-rails'
+gem 'compass-rails', github: 'Compass/compass-rails', branch: '2-0-stable'
 gem 'coffee-rails'
 gem 'uglifier'
+gem 'turbolinks'
 
 # Features
 gem 'omniauth-facebook'

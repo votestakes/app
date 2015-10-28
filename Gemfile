@@ -5,6 +5,7 @@ gem 'rails', '~>4.2'
 gem 'pg'
 gem 'dalli'
 gem 'rails_12factor'
+gem 'dotenv-rails'
 
 # ActiveRecord
 gem 'devise'

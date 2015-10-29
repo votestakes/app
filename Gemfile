@@ -24,7 +24,7 @@ gem 'turbolinks'
 gem 'omniauth-facebook'
 
 group :production do
-  gem 'unicorn'
+  gem 'puma'
 end
 
 group :development do

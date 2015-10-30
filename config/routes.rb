@@ -3,8 +3,10 @@ Rails.application.routes.draw do
                         omniauth_callbacks: 'omniauth_callbacks' }
   root 'challenges#index'
 
-
   resources :users
   resources :challenges
+
+  post 'challenges/:id/join' => 'challenges#join',
+       as: :join_challenge
 
 end

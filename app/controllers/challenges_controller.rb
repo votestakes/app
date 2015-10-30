@@ -1,5 +1,5 @@
 class ChallengesController < ApplicationController
-  before_action :set_challenge, only: [:show, :edit, :update, :destroy]
+  before_action :set_challenge, only: [:show, :edit, :update, :destroy, :join]
 
   # GET /challenges
   def index
@@ -44,6 +44,15 @@ class ChallengesController < ApplicationController
     @challenge.destroy
     redirect_to challenges_url, notice: 'Challenge was successfully destroyed.'
   end
+
+  def join
+    @challenge.users << current_user
+    redirect_to @challenge, notice: 'You have joined this challenge!'
+  end
+
+  # def quit
+    # @challenge.users
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.

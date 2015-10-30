@@ -3,12 +3,23 @@
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
+<p><%= link_to 'Join Challenge',
+            join_challenge_path,
+            method: :post,
+            class: 'btn btn-primary'  %></p>
+
 <div class="fieldset">
   <dl>
       <dt class="label label-default"><%= model_class.human_attribute_name(:date) %></dt>
       <dd><pre class="prettyprint"><%= @challenge.date %></pre></dd>
       <dt class="label label-default"><%= model_class.human_attribute_name(:description) %></dt>
       <dd><pre class="prettyprint"><%= @challenge.description %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:users) %></dt>
+      <dd><pre class="prettyprint">
+        <% @challenge.users.each do |user| %>
+          <p><%= user %></p>
+        <% end %>
+      </pre></dd>
   </dl>
 </div>
 

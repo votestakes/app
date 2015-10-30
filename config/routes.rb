@@ -9,4 +9,7 @@ Rails.application.routes.draw do
   post 'challenges/:id/join' => 'challenges#join',
        as: :join_challenge
 
+  post 'challenges/:id/quit' => 'challenges#quit',
+       as: :quit_challenge
+
 end

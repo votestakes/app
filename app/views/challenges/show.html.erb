@@ -3,10 +3,17 @@
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
-<p><%= link_to 'Join Challenge',
-            join_challenge_path,
-            method: :post,
-            class: 'btn btn-primary'  %></p>
+<% if @user_joined %>
+  <p>You are part of this challenge!</p>
+  <p><%= link_to 'Quit Challenge?',
+              quit_challenge_path,
+              method: :post %>
+<% else %>
+  <p><%= link_to 'Join Challenge',
+              join_challenge_path,
+              method: :post,
+              class: 'btn btn-primary'  %></p>
+<% end %>
 
 <div class="fieldset">
   <dl>

@@ -29,7 +29,8 @@ end
 
 group :development do
   gem 'foreman'
-  gem 'byebug'
+  gem 'jazz_hands', github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger'
+  gem 'pry-byebug'
   gem 'web-console'
   gem 'guard-rspec'
   gem 'guard-livereload'

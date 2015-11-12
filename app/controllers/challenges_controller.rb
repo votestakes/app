@@ -8,7 +8,9 @@ class ChallengesController < ApplicationController
 
   # GET /challenges/1
   def show
-    @user_joined = @challenge.users.where(id: current_user.id).any?
+    if current_user
+      @user_joined = @challenge.users.where(id: current_user.id).any?
+    end
   end
 
   # GET /challenges/new
@@ -47,8 +49,12 @@ class ChallengesController < ApplicationController
   end
 
   def join
-    @challenge.users << current_user
-    redirect_to @challenge, notice: 'You have joined this challenge!'
+    if current_user
+      current_user.accept_challenge(@challenge)
+      redirect_to @challenge, notice: 'You have joined this challenge!'
+    else
+      redirect_to new_user_registration_path, notice: 'You must sign up first'
+    end
   end
 
   def quit

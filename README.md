@@ -1,24 +1,39 @@
+What do I install?
+
+```sh
+rbenv install 2.2.2
+gem install bunlder
+bundle install
+```
+
+How do I set up the database?
+
+```sh
+createdb votestakes_dev
+bin/rake db:migrate RAILS_ENV=development
+```
+
 How do I run localhost?
 
-    `bundle exec foreman start -f Procfile.dev`
+```sh
+bundle exec foreman start -f Procfile.dev
+```
 
 How do I run tests?
 
-    You must first write some... then
-    Should set up a guard watcher
-    `bundle exec rspec spec`
+```sh
+bundle exec rspec spec
+```
 
 How do I create a new (x)
 
-    `bundle exec rails g --help`
-
-How do I deploy
-
-    it's heroku
+```sh
+bundle exec rails g --help
+```
 
 How do I learn about Ruby/Rails?
 
-    http://ruby-doc.org/core-2.2.0/
-    http://api.rubyonrails.org/classes/Array.html
-    http://railscasts.com/
+* http://ruby-doc.org/core-2.2.0/
+* http://api.rubyonrails.org/classes/Array.html
+* http://railscasts.com/
 

@@ -1,9 +1,11 @@
-# Ignore bundler config.
+# Ignore all bundler files
 /.bundle
+/vendor
 
-# Ignore all logfiles and tempfiles.
+# Ignore all logfiles and tempfiles
 /log/*
 !/log/.keep
 /tmp
 
+# Ignore all app configuration
 .env

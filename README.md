@@ -2,7 +2,7 @@ What do I install?
 
 ```sh
 rbenv install 2.2.2
-gem install bunlder
+gem install bundler
 bundle install
 ```
 
@@ -36,4 +36,3 @@ How do I learn about Ruby/Rails?
 * http://ruby-doc.org/core-2.2.0/
 * http://api.rubyonrails.org/classes/Array.html
 * http://railscasts.com/
-

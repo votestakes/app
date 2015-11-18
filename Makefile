@@ -8,7 +8,7 @@ RAKE := $(BIN)/rake
 # MAIN TARGETS #################################################################
 
 .PHONY: all
-all: install
+all: env install
 
 .PHONY: ci
 ci: check
@@ -19,13 +19,15 @@ HOST := localhost
 PORT ?= 3000
 
 .PHONY: run
-run: .env install
+run: env install
 	$(FOREMAN) start --procfile Procfile.dev --port $(PORT)
 
 .PHONY: launch
 launch: install
 	eval "sleep 5; open http://$(HOST):$(PORT)" & make run
 
+.PHONY: env
+env: .env
 .env:
 	# test app credentials
 	echo "FAKEBOOK_KEY=416562618535204" >> .env
@@ -63,6 +65,7 @@ test: install
 
 .PHONY: clean
 clean:
+	rm -rf .env
 
 .PHONY: clean-all
 clean-all: clean

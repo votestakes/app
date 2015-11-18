@@ -2,6 +2,9 @@ BE := bundle exec
 FOREMAN := $(BE) foreman
 RSPEC := $(BE) rspec
 
+BIN := bin
+RAKE := $(BIN)/rake
+
 # MAIN TARGETS #################################################################
 
 .PHONY: all
@@ -12,16 +15,21 @@ ci: check
 
 # RUN SERVER ###################################################################
 
-HOST = $(shell ipconfig getifaddr en0 || ipconfig getifaddr en1)
-PORT ?= 8000
+HOST := localhost
+PORT ?= 3000
 
 .PHONY: run
-run: install
+run: .env install
 	$(FOREMAN) start --procfile Procfile.dev --port $(PORT)
 
 .PHONY: launch
 launch: install
 	eval "sleep 5; open http://$(HOST):$(PORT)" & make run
+
+.env:
+	# test app credentials
+	echo "FAKEBOOK_KEY=416562618535204" >> .env
+	echo "FACEBOOK_SECRET=fbd09194dfaa8f25812475b2218e02d9" >> .env
 
 # INSTALL DEPENDENCIES #########################################################
 
@@ -38,6 +46,12 @@ $(INSTALLED_FLAG): Gemfile* Makefile
 update: install
 	bundle update
 	@ touch $(INSTALLED_FLAG)  # indicate that dependencies are installed
+
+# DATABASE #####################################################################
+
+.PHONY: db
+db:
+	$(RAKE) db:migrate RAILS_ENV=development
 
 # UNIT TESTS  ##################################################################
 

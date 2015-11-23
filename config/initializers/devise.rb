@@ -239,7 +239,7 @@ Devise.setup do |config|
 
   config.omniauth :facebook, ENV['FAKEBOOK_KEY'], ENV['FACEBOOK_SECRET'],
     :scope => 'public_profile,email,user_friends,user_location',
-    :info_fields => 'email,gender,location,name,friends,'
+    :info_fields => 'email,gender,location,name,friends'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
                         omniauth_callbacks: 'omniauth_callbacks' }
-  root 'challenges#index'
+  root 'pages#intro'
 
   resources :users
   resources :challenges

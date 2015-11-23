@@ -70,6 +70,8 @@ class ChallengesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def challenge_params
-      params.require(:challenge).permit(:date, :description)
+      # synthesize the description
+      params[:description] = "#{params[:friends]} #{params[:event]}"
+      params.permit(:date, :description)
     end
 end

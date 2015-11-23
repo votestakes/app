@@ -40,4 +40,10 @@
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>
+
+  <% if @user_joined %>
+    <%= link_to 'Share',
+                '',
+                :class => 'btn btn-primary' %>
+  <% end %>
 </div>

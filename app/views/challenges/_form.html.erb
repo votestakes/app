@@ -1,14 +1,35 @@
 <%= form_for @challenge, :html => { :class => 'form-horizontal' } do |f| %>
+
+  <div>
+    <p>What voting event are we talking about?</p>
+  </div>
+
   <div class="form-group">
-    <%= f.label :date, :class => 'control-label col-md-2' %>
+    <%= f.label 'Event', :class => 'control-label col-md-2' %>
     <div class="col-md-10">
-      <%= f.date_field :date, :class => 'text_field form-control' %>
+      <%= select_tag :event, options_for_select([['2015 Presidential Primary', 'Primary']]), :class => 'text_field form-control' %>
     </div>
   </div>
+
+  <div>
+    <p>Who do you want to challenge to vote?</p>
+  </div>
+
   <div class="form-group">
-    <%= f.label :description, :class => 'control-label col-md-2' %>
+    <%= f.label 'Friends', :class => 'control-label col-md-2' %>
     <div class="col-md-10">
-      <%= f.text_field :description, :class => 'text_field form-control' %>
+      <%= text_field_tag 'friends', nil, :class => 'text_field form-control' %>
+    </div>
+  </div>
+
+  <div>
+    <p>What's at stake for the non-voters?</p>
+  </div>
+
+  <div class="form-group">
+    <%= f.label 'Stakes', :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= text_field_tag 'stakes', nil, :class => 'text_field form-control' %>
     </div>
   </div>
 

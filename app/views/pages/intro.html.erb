@@ -1,0 +1,14 @@
+<h1>Welcome to VoteStakes!</h1>
+
+<ul>
+  <li>Step 1</li>
+  <li>Step 2</li>
+  <li>Vote!</li>
+</ul>
+
+<% if user_signed_in? %>
+  <%= link_to 'Challenge your friends', new_challenge_path, class: 'btn btn-primary' %>
+<% else %>
+  <!-- TODO: figure out destination -->
+  <%= link_to "Challenge your friends", user_omniauth_authorize_path(:facebook), class: 'btn btn-primary' %>
+<% end %>

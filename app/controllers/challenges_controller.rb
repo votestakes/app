@@ -53,7 +53,7 @@ class ChallengesController < ApplicationController
       current_user.accept_challenge(@challenge)
       redirect_to @challenge, notice: 'You have joined this challenge!'
     else
-      redirect_to new_user_registration_path, notice: 'You must sign up first'
+      redirect_to user_omniauth_authorize_path(:facebook), notice: 'You must sign up first'
     end
   end
 

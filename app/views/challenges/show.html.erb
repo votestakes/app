@@ -22,7 +22,7 @@
       <dt class="label label-default"><%= model_class.human_attribute_name(:date) %></dt>
       <dd><pre class="prettyprint"><%= @challenge.date %></pre></dd>
       <dt class="label label-default">If you don't vote you WILL</dt>
-      <dd><pre class="prettyprint"><%= @challenge.description %></pre></dd>
+      <dd><pre class="prettyprint"><%= @challenge.stakes %></pre></dd>
       <dt class="label label-default"><%= model_class.human_attribute_name(:users) %></dt>
       <dd><pre class="prettyprint">
         <% @challenge.members.each do |user| %>

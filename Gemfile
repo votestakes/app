@@ -9,6 +9,7 @@ gem 'dotenv-rails'
 
 # ActiveRecord
 gem 'devise'
+gem 'activerecord_any_of'
 
 # Assets
 gem 'sass-rails'

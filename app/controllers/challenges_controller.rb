@@ -4,6 +4,12 @@ class ChallengesController < ApplicationController
   # GET /challenges
   def index
     @challenges = Challenge.all
+    if current_user
+      @my_challenges = Challenge.includes(:users)
+                                .where.any_of({creator_id: current_user.id},
+                                              "users.id = '#{current_user.id}'")
+                                .references(:users)
+    end
   end
 
   # GET /challenges/1

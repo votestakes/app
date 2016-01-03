@@ -10,16 +10,13 @@ class ChallengesController < ApplicationController
   def show
     if current_user
       @user_joined = @challenge.user_joined?(current_user)
+      @user_is_creator = @challenge.creator == current_user
     end
   end
 
   # GET /challenges/new
   def new
     @challenge = Challenge.new
-  end
-
-  # GET /challenges/1/edit
-  def edit
   end
 
   # POST /challenges
@@ -31,15 +28,6 @@ class ChallengesController < ApplicationController
       redirect_to @challenge, notice: 'Challenge was successfully created.'
     else
       render :new
-    end
-  end
-
-  # PATCH/PUT /challenges/1
-  def update
-    if @challenge.update(challenge_params)
-      redirect_to @challenge, notice: 'Challenge was successfully updated.'
-    else
-      render :edit
     end
   end
 

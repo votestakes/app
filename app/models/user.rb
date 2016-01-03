@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :challenges
 
   def accept_challenge challenge
-    challenge.users << self
+    challenge.users << self unless challenge.creator == self
   end
 
   def to_s

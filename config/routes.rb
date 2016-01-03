@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'pages#intro'
 
   resources :users
-  resources :challenges
+  resources :challenges, except: :edit
 
   post 'challenges/:id/join' => 'challenges#join',
        as: :join_challenge

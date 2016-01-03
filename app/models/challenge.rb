@@ -4,7 +4,7 @@ class Challenge < ActiveRecord::Base
   belongs_to :creator, class_name: "User"
 
   def members
-    users + creator
+    users + [creator]
   end
 
   def user_joined? user

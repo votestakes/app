@@ -3,7 +3,9 @@
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
-<% if @user_joined %>
+<% if @user_is_creator %>
+  <p>You created this challenge!</p>
+<% elsif @user_joined %>
   <p>You are part of this challenge!</p>
   <p><%= link_to 'Quit Challenge?',
               quit_challenge_path,
@@ -23,7 +25,7 @@
       <dd><pre class="prettyprint"><%= @challenge.description %></pre></dd>
       <dt class="label label-default"><%= model_class.human_attribute_name(:users) %></dt>
       <dd><pre class="prettyprint">
-        <% @challenge.users.each do |user| %>
+        <% @challenge.members.each do |user| %>
           <p><%= user %></p>
         <% end %>
       </pre></dd>
@@ -33,13 +35,14 @@
 <div class="form-group">
   <%= link_to t('.back', :default => t("helpers.links.back")),
               challenges_path, :class => 'btn btn-default'  %>
-  <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_challenge_path(@challenge), :class => 'btn btn-default' %>
-  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              challenge_path(@challenge),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
+  <% if @user_is_creator %>
+
+    <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                challenge_path(@challenge),
+                :method => 'delete',
+                :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                :class => 'btn btn-danger' %>
+  <% end %>
 
   <% if @user_joined %>
     <%= link_to 'Share',

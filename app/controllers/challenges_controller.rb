@@ -25,6 +25,7 @@ class ChallengesController < ApplicationController
   # POST /challenges
   def create
     @challenge = Challenge.new(challenge_params)
+    @challenge.users << current_user
 
     if @challenge.save
       redirect_to @challenge, notice: 'Challenge was successfully created.'

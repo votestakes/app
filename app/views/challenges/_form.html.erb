@@ -1,13 +1,14 @@
 <%= form_for @challenge, :html => { :class => 'form-horizontal' } do |f| %>
 
   <div>
-    <p>What voting event are we talking about?</p>
+    <p>Which voting event you care about?</p>
   </div>
 
   <div class="form-group">
     <%= f.label 'Event', :class => 'control-label col-md-2' %>
     <div class="col-md-10">
-      <%= select_tag :event, options_for_select([['2015 Presidential Primary', 'Primary']]), :class => 'text_field form-control' %>
+      <%# TODO: get this list from the events table %>
+      <%= select_tag :event, options_for_select([['2016 Presidential Primary', 'Primary']]), :class => 'text_field form-control' %>
     </div>
   </div>
 
@@ -16,20 +17,50 @@
   </div>
 
   <div class="form-group">
-    <%= f.label 'Friends', :class => 'control-label col-md-2' %>
+    <%= f.label 'Challengee', :class => 'control-label col-md-2' %>
     <div class="col-md-10">
-      <%= text_field_tag 'friends', nil, :class => 'text_field form-control' %>
+      <%# TODO: consider including their Facebook friends in a list %>
+      <%= text_field_tag 'challengee', "My Friends", :class => 'text_field form-control' %>
     </div>
   </div>
 
   <div>
-    <p>What's at stake for the non-voters?</p>
+    <p>How will you feel if they don't vote?</p>
+  </div>
+
+  <div class="form-group">
+    <%= f.label 'Emotion', :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%# TODO: show a few sad emotions in a list, but allow custom %>
+      <%= text_field_tag 'emotion', "Sad", :class => 'text_field form-control' %>
+    </div>
+  </div>
+
+  <div>
+    <p>What stakes will incentive your friends to vote?</p>
   </div>
 
   <div class="form-group">
     <%= f.label 'Stakes', :class => 'control-label col-md-2' %>
     <div class="col-md-10">
-      <%= text_field_tag 'stakes', nil, :class => 'text_field form-control' %>
+      <%# TODO: show common options in a list, but allow custom %>
+      <%= text_field_tag 'stakes', "$20", :class => 'text_field form-control' %>
+    </div>
+  </div>
+
+  <div>
+    <p>Select a meme template:</p>
+  </div>
+
+  <%# TODO: get this list from the API %>
+  <div class="form-group">
+    <%= f.label 'Name', :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= text_field_tag 'meme_name', "sad-biden", :class => 'text_field form-control' %>
+    </div>
+    <%= f.label 'Style', :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= text_field_tag 'meme_style', "window", :class => 'text_field form-control' %>
     </div>
   </div>
 

@@ -19,10 +19,18 @@
 
 <div class="fieldset">
   <dl>
-      <dt class="label label-default"><%= model_class.human_attribute_name(:date) %></dt>
-      <dd><pre class="prettyprint"><%= @challenge.date %></pre></dd>
-      <dt class="label label-default">If you don't vote you WILL</dt>
+      <dt class="label label-default">Challenger</dt>
+      <dd><pre class="prettyprint"><%= @challenge.challenger %></pre></dd>
+      <dt class="label label-default">will be</dt>
+      <dd><pre class="prettyprint"><%= @challenge.emotion %></pre></dd>
+      <dt class="label label-default">if voter turnout is low in the</dt>
+      <dd><pre class="prettyprint"><%= @challenge.event_id %></pre></dd>
+      <dt class="label label-default">is</dt>
       <dd><pre class="prettyprint"><%= @challenge.stakes %></pre></dd>
+      <dt class="label label-default">enough to incentize</dt>
+      <dd><pre class="prettyprint"><%= @challenge.challengee %></pre></dd>
+      <dt class="label label-default">Meme</dt>
+      <dd><pre class="prettyprint"><%= @challenge.meme_url %></pre></dd>
       <dt class="label label-default"><%= model_class.human_attribute_name(:users) %></dt>
       <dd><pre class="prettyprint">
         <% @challenge.members.each do |user| %>

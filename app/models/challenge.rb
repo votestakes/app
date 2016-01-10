@@ -11,8 +11,22 @@ class Challenge < ActiveRecord::Base
     user == creator || users.where(id: user.id).any?
   end
 
+  def meme_top
+    # TODO: load the name from event.name
+    "#{challenger} will be #{emotion} if the #{event_id} has a low voter turnout."
+  end
+
+  def meme_bottom
+    "Is #{stakes} enough to incentivize #{challengee} to vote?"
+  end
+
+  def meme_url
+    top = self.meme_top.tr(' ', '-').gsub('?', '~q').downcase
+    bottom = self.meme_bottom.tr(' ', '-').gsub('?', '~q').downcase
+    "http://memegen.link/#{meme_name}/#{top}/#{bottom}.jpg?alt=#{meme_style}"
+  end
+
   def to_s
     "#{date} - #{id}"
   end
 end
-

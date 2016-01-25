@@ -3,6 +3,8 @@
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
+<%= image_tag @challenge.meme_url %>
+
 <% if @user_is_creator %>
   <p>You created this challenge!</p>
 <% elsif @user_joined %>

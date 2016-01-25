@@ -32,6 +32,7 @@ group :development do
   gem 'foreman'
   gem 'jazz_hands', github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger'
   gem 'pry-byebug'
+  gem 'better_errors'
   gem 'web-console'
   gem 'guard-rspec'
   gem 'guard-livereload'

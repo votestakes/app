@@ -2,6 +2,7 @@ class Challenge < ActiveRecord::Base
   has_and_belongs_to_many :users
 
   belongs_to :creator, class_name: "User"
+  belongs_to :event
 
   def members
     users + [creator]
@@ -13,7 +14,7 @@ class Challenge < ActiveRecord::Base
 
   def meme_top
     # TODO: load the name from event.name
-    "#{challenger} will be #{emotion} if the #{event_id} has a low voter turnout."
+    "#{creator} will be #{emotion} if the 2016 Presidential Primary has a low voter turnout."
   end
 
   def meme_bottom

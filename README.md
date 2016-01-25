@@ -25,14 +25,22 @@ How do I run tests?
 bundle exec rspec spec
 ```
 
-How do I create a new (x)
+How do I create a new (x)?
 
 ```sh
 bundle exec rails g --help
 ```
 
+Create a migration whenever making database changes
+* http://edgeguides.rubyonrails.org/active_record_migrations.html
+
+```sh
+bundle exec rails g migration change_some_database_stuff
+```
+
 How do I learn about Ruby/Rails?
 
-* http://ruby-doc.org/core-2.2.0/
+* http://ruby-doc.org/core-2.3.0/
 * http://api.rubyonrails.org/classes/Array.html
 * http://railscasts.com/
+* http://rubykoans.com/

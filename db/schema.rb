@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160103050207) do
+ActiveRecord::Schema.define(version: 20160124035056) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,8 +23,13 @@ ActiveRecord::Schema.define(version: 20160103050207) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.text     "stakes"
-    t.text     "friends"
+    t.text     "challengee"
     t.uuid     "creator_id"
+    t.uuid     "event_id"
+    t.text     "challenger"
+    t.text     "emotion"
+    t.text     "meme_name"
+    t.text     "meme_style"
   end
 
   create_table "challenges_users", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
@@ -34,6 +39,10 @@ ActiveRecord::Schema.define(version: 20160103050207) do
 
   add_index "challenges_users", ["challenge_id"], name: "index_challenges_users_on_challenge_id", using: :btree
   add_index "challenges_users", ["user_id"], name: "index_challenges_users_on_user_id", using: :btree
+
+  create_table "events", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+    t.text "name", null: false
+  end
 
   create_table "users", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.string   "name"

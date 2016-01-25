@@ -52,7 +52,7 @@ update: install
 # DATABASE #####################################################################
 
 .PHONY: db
-db:
+db: install
 	$(RAKE) db:migrate RAILS_ENV=development
 
 # UNIT TESTS  ##################################################################

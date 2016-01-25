@@ -65,6 +65,6 @@ class ChallengesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def challenge_params
-      params.permit(:date, :friends, :stakes)
+      params.permit(:date, :challenger, :challengee, :emotion, :stakes, :meme_name, :meme_style)
     end
 end

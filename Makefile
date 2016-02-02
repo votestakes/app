@@ -30,8 +30,8 @@ launch: install
 env: .env
 .env:
 	# test app credentials
-	echo "FAKEBOOK_KEY=416562618535204" >> .env
-	echo "FACEBOOK_SECRET=fbd09194dfaa8f25812475b2218e02d9" >> .env
+	echo "FACEBOOK_APP_ID=1658321967767771" >> .env
+	echo "FACEBOOK_SECRET=53d6f8b23341d5423c35e9812ba15f42" >> .env
 
 # INSTALL DEPENDENCIES #########################################################
 

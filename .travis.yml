@@ -1,0 +1,21 @@
+sudo: false
+
+language: ruby
+rvm:
+- 2.3.0
+
+cache:
+  directories:
+  - vendor
+
+install:
+- make install
+
+script:
+- make test
+
+notifications:
+  email:
+    on_success: never
+    on_failure: change
+  slack: votestakes:wlFrOcSeyGrsFf7SvoBftZxE

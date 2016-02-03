@@ -11,7 +11,7 @@ RAKE := $(BIN)/rake
 all: env install
 
 .PHONY: ci
-ci: check
+ci: test
 
 # RUN SERVER ###################################################################
 
@@ -53,12 +53,18 @@ update: install
 
 .PHONY: db
 db: install
+	- createdb votestakes_dev
 	$(RAKE) db:migrate RAILS_ENV=development
 
-# UNIT TESTS  ##################################################################
+.PHONY: db-test
+db-test: install
+	- createdb votestakes_test
+	$(RAKE) db:migrate RAILS_ENV=test
+
+# TESTS  #######################################################################
 
 .PHONY: test
-test: install
+test: install db-test
 	$(RSPEC) spec
 
 # CLEANUP ######################################################################

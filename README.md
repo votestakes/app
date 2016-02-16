@@ -15,8 +15,7 @@ bundle install
 How do I set up the database?
 
 ```sh
-createdb votestakes_dev
-bin/rake db:migrate RAILS_ENV=development
+make db
 ```
 
 How do I run localhost?
@@ -28,7 +27,7 @@ make run
 How do I run tests?
 
 ```sh
-bundle exec rspec spec
+make ci
 ```
 
 How do I create a new (x)?

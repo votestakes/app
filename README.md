@@ -22,7 +22,7 @@ bin/rake db:migrate RAILS_ENV=development
 How do I run localhost?
 
 ```sh
-bundle exec foreman start -f Procfile.dev
+make run
 ```
 
 How do I run tests?

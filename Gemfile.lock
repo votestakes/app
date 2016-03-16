@@ -195,6 +195,9 @@ GEM
     hike (1.2.3)
     hirb (0.7.3)
     http_parser.rb (0.6.0)
+    httparty (0.13.7)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.7.0)
     jquery-rails (4.1.0)
       rails-dom-testing (~> 1.0)
@@ -412,6 +415,7 @@ DEPENDENCIES
   guard-bundler
   guard-livereload
   guard-rspec
+  httparty
   jazz_hands!
   jquery-rails
   launchy

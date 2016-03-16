@@ -49,18 +49,13 @@
   </div>
 
   <div>
-    <p>Select a meme template:</p>
+    <p>Which meme would you like to use?</p>
   </div>
 
-  <%# TODO: get this list from the API %>
   <div class="form-group">
     <%= f.label 'Name', :class => 'control-label col-md-2' %>
     <div class="col-md-10">
-      <%= text_field_tag 'meme_name', "sad-biden", :class => 'text_field form-control' %>
-    </div>
-    <%= f.label 'Style', :class => 'control-label col-md-2' %>
-    <div class="col-md-10">
-      <%= text_field_tag 'meme_style', "window", :class => 'text_field form-control' %>
+      <%= select_tag 'meme_name', options_for_select(@templates), :class => 'text_field form-control' %>
     </div>
   </div>
 

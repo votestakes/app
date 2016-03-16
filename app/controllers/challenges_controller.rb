@@ -23,12 +23,15 @@ class ChallengesController < ApplicationController
   # GET /challenges/new
   def new
     @challenge = Challenge.new
+    @templates = HTTParty.get('http://memegen.link/aliases/?name=votestakes')
   end
 
   # POST /challenges
   def create
     @challenge = Challenge.new(challenge_params)
     @challenge.creator = current_user
+    templates = HTTParty.get('http://memegen.link/aliases/?name=votestakes')
+    @challenge.meme_style = templates[@challenge.meme_name]['styles'].sample
 
     if @challenge.save
       redirect_to @challenge, notice: 'Challenge was successfully created.'

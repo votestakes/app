@@ -24,6 +24,9 @@ gem 'turbolinks'
 # Features
 gem 'omniauth-facebook'
 
+# Utilities
+gem 'httparty'
+
 group :production do
   gem 'puma'
 end

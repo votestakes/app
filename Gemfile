@@ -23,6 +23,7 @@ gem 'turbolinks'
 
 # Features
 gem 'omniauth-facebook'
+gem 'gibbon'
 
 # Utilities
 gem 'httparty'

@@ -69,13 +69,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">VoteStakes</a>
+          <a class="navbar-brand" href="http://votestakes.com">VoteStakes</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "Challenges", challenges_path %></li>
+            <li><a href="/">Public Feed</a></li>
+            <li><%= link_to "My Challenges", challenges_path %></li>
             <% if user_signed_in? %>
               <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
               <li><a>[Signed in as <%= current_user.name %>]</a></li>

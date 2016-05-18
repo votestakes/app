@@ -1,13 +1,19 @@
+require 'faker'
+
 FactoryGirl.define do
 
   factory :user do
-    sequence(:name) { |n| "user#{n}" }
-    email { "#{name}@trader.com" }
-    # password '12345678'
+    name { Faker::Name.name }
+    email { Faker::Internet.email }
+  end
+
+  factory :event do
+    name 'Sample Event'
   end
 
   factory :challenge do
-
+    association :creator, factory: :user
+    association :event, factory: :event
   end
 
 end

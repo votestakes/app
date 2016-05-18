@@ -23,7 +23,7 @@ class ChallengesController < ApplicationController
   # GET /challenges/new
   def new
     @challenge = Challenge.new
-    @templates = HTTParty.get('http://memegen.link/aliases/?name=votestakes')
+    @templates = HTTParty.get('http://memegen.link/aliases/?name=votestakes').to_a.shuffle.to_h
   end
 
   # POST /challenges

@@ -14,7 +14,7 @@ class Challenge < ActiveRecord::Base
 
   def meme_top
     # TODO: load the name from event.name
-    "#{creator} will be #{emotion} if the 2016 Presidential Primary has a low voter turnout."
+    "#{creator} will be #{emotion} if the #{event.name} has a low voter turnout."
   end
 
   def meme_bottom

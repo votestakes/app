@@ -1,8 +1,8 @@
 class Challenge < ActiveRecord::Base
   has_and_belongs_to_many :users
 
-  belongs_to :creator, class_name: "User"
-  belongs_to :event
+  belongs_to :creator, class_name: "User", required: true
+  belongs_to :event, required: true
 
   def members
     users + [creator]

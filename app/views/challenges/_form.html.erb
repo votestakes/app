@@ -7,7 +7,9 @@
   <div class="form-group">
     <%= f.label 'Event', :class => 'control-label col-md-2' %>
     <div class="col-md-10">
-      <%= collection_select :event, :event_id, Event.all, :id, :name, {}, :class => 'text_field form-control' %>
+      <%= select_tag(:event_id,
+                     options_from_collection_for_select(Event.all, :id, :name),
+                     class: 'text_field form-control') %>
     </div>
   </div>
 

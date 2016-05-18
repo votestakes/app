@@ -60,4 +60,5 @@ group :test do
   gem 'poltergeist'
   gem 'launchy'
   gem 'spring'
+  gem 'faker'
 end

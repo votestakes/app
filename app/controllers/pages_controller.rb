@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 
   def intro
-    @challenges = Challenge.all
+    @challenges = Challenge.order(updated_at: :desc)
   end
 
 end

@@ -1,6 +1,7 @@
-class PagesController < ApplicationController
+class FeedController < ApplicationController
 
-  def intro
+  # GET /feed
+  def index
     @challenges = Challenge.order(updated_at: :desc).limit(9)
   end
 

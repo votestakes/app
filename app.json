@@ -1,8 +1,12 @@
 {
   "name": "votestakes",
   "scripts": {
+    "postdeploy": "rake $DEPLOY_TASKS"
   },
   "env": {
+    "DEPLOY_TASKS": {
+      "required": true
+    },
     "FACEBOOK_APP_ID": "1658321967767771",
     "FACEBOOK_SECRET": "53d6f8b23341d5423c35e9812ba15f42",
     "LANG": {

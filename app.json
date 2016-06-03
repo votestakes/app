@@ -1,0 +1,38 @@
+{
+  "name": "votestakes",
+  "scripts": {
+  },
+  "env": {
+    "FACEBOOK_APP_ID": "1658321967767771",
+    "FACEBOOK_SECRET": "53d6f8b23341d5423c35e9812ba15f42",
+    "LANG": {
+      "required": true
+    },
+    "RACK_ENV": {
+      "required": true
+    },
+    "RAILS_ENV": {
+      "required": true
+    },
+    "RAILS_SERVE_STATIC_FILES": {
+      "required": true
+    },
+    "SECRET_KEY_BASE": "cc4d51cc7294fd60e8df80431d17833a5aa817446a9a25649c3e86c100aebe74243e921f9b0c1aaa8b5258c9d614b39bec233e9618cfb3f43cebb97c0f217288"
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    },
+    "worker": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+    "heroku-postgresql"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    }
+  ]
+}

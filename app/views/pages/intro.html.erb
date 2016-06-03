@@ -1,4 +1,4 @@
-<h1>Welcome to VoteStakes!</h1>
+<h1>Latest Challenges</h1>
 
 <% @challenges.in_groups_of(3, false).each do |group| %>
   <div class='row'>
@@ -10,9 +10,11 @@
   </div>
 <% end %>
 
+<br>
+
 <% if user_signed_in? %>
-  <%= link_to 'Challenge your friends', new_challenge_path, class: 'btn btn-primary' %>
+  <%= link_to 'Challenge Your Friends', new_challenge_path, class: 'btn btn-primary' %>
 <% else %>
   <!-- TODO: figure out destination -->
-  <%= link_to "Challenge your friends", user_omniauth_authorize_path(:facebook), class: 'btn btn-primary' %>
+  <%= link_to 'Challenge Your Friends', user_omniauth_authorize_path(:facebook), class: 'btn btn-primary' %>
 <% end %>

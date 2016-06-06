@@ -1,7 +1,7 @@
 # VoteStakes
 
-[![Build Status](https://travis-ci.org/votestakes/app.svg?branch=master)](https://travis-ci.org/votestakes/app)
-[![Stories in Ready](https://badge.waffle.io/votestakes/app.svg?label=ready&title=stories)](http://waffle.io/votestakes/app)
+[![Build Status](https://travis-ci.org/votestakes/votestakes-app.svg?branch=master)](https://travis-ci.org/votestakes/votestakes-app)
+[![Stories in Ready](https://badge.waffle.io/votestakes/votestakes-app.svg?label=ready&title=stories)](http://waffle.io/votestakes/votestakes-app)
 [![Slack Status](https://slackin-votestakes.herokuapp.com/badge.svg)](https://slackin-votestakes.herokuapp.com)
 
 What do I install?

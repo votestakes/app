@@ -6,7 +6,7 @@ rvm:
 
 cache:
   directories:
-  - vendor
+  - vendor/bundler
 
 install:
 - make install

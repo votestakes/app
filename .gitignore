@@ -1,6 +1,6 @@
 # Ignore all bundler files
 /.bundle
-/vendor
+/vendor/bundler
 
 # Ignore all logfiles and tempfiles
 /log/*

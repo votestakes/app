@@ -35,19 +35,16 @@ env: .env
 
 # INSTALL DEPENDENCIES #########################################################
 
-VENDOR_DIR := vendor
-INSTALLED_FLAG := $(VENDOR_DIR)/.installed
-
 .PHONY: install
-install: $(INSTALLED_FLAG)
-$(INSTALLED_FLAG): Gemfile* Makefile
-	bundle install --path vendor
-	@ touch $(INSTALLED_FLAG)  # indicate that dependencies are installed
+install: vendor/bundler
+vendor/bundler: Gemfile* Makefile
+	bundle install --path vendor/bundler
+	@ touch $@
 
 .PHONY: update
 update: install
 	bundle update
-	@ touch $(INSTALLED_FLAG)  # indicate that dependencies are installed
+	@ touch vendor/bundler
 
 # DATABASE #####################################################################
 
@@ -75,4 +72,4 @@ clean:
 
 .PHONY: clean-all
 clean-all: clean
-	rm -rf .bundle $(VENDOR_DIR)
+	rm -rf .bundle vendor/bundler

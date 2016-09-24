@@ -1,18 +1,19 @@
-sudo: false
-
 language: ruby
 rvm:
-- 2.3.0
+  - 2.3.0
 
 cache:
   directories:
-  - vendor
+    - vendor/bundler
+
+before_install:
+  - touch Gemfile
 
 install:
-- make install
+  - make install
 
 script:
-- make ci
+  - make ci
 
 notifications:
   email:

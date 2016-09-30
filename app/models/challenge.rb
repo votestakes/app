@@ -24,7 +24,7 @@ class Challenge < ActiveRecord::Base
   def meme_url
     top = self.meme_top.tr(' ', '-').gsub('?', '~q').downcase
     bottom = self.meme_bottom.tr(' ', '-').gsub('?', '~q').downcase
-    "http://memegen.link/#{meme_name}/#{top}/#{bottom}.jpg?alt=#{meme_style}"
+    "https://memegen.link/#{meme_name}/#{top}/#{bottom}.jpg?alt=#{meme_style}"
   end
 
   def to_s

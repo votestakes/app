@@ -23,14 +23,14 @@ class ChallengesController < ApplicationController
   # GET /challenges/new
   def new
     @challenge = Challenge.new
-    @templates = HTTParty.get('http://memegen.link/api/aliases/?name=votestakes').to_a.shuffle.to_h
+    @templates = HTTParty.get('https://memegen.link/api/aliases/?name=votestakes').to_a.shuffle.to_h
   end
 
   # POST /challenges
   def create
     @challenge = Challenge.new(challenge_params)
     @challenge.creator = current_user
-    templates = HTTParty.get('http://memegen.link/api/aliases/?name=votestakes')
+    templates = HTTParty.get('https://memegen.link/api/aliases/?name=votestakes')
     @challenge.meme_style = templates[@challenge.meme_name]['styles'].sample
 
     if @challenge.save

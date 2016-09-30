@@ -24,7 +24,7 @@ run: env install
 
 .PHONY: launch
 launch: install
-	eval "sleep 5; open http://$(HOST):$(PORT)" & make run
+	eval "sleep 6 && open http://$(HOST):$(PORT)" & make run
 
 .PHONY: env
 env: .env

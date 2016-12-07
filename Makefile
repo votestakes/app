@@ -30,8 +30,10 @@ launch: install
 env: .env
 .env:
 	# test app credentials
-	echo "FACEBOOK_APP_ID=1658321967767771" >> .env
-	echo "FACEBOOK_SECRET=53d6f8b23341d5423c35e9812ba15f42" >> .env
+	echo "FACEBOOK_APP_ID=1658321967767771" >> $@
+	echo "FACEBOOK_SECRET=53d6f8b23341d5423c35e9812ba15f42" >> $@
+	echo "MAILCHIMP_API_KEY=..." >>$@
+	echo "MAILCHIMP_LIST_ID=4c3afdb01e # test mailing list" >> $@
 
 # INSTALL DEPENDENCIES #########################################################
 
